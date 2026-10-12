@@ -11,15 +11,22 @@ export default function AuthenticatedLayout({ header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
-            <nav className="border-b border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-800">
+        <div className="min-h-screen bg-slate-50 dark:bg-gray-900 font-sans antialiased">
+            <nav className="border-b border-slate-200 bg-white dark:border-gray-700 dark:bg-gray-800 shadow-sm">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 justify-between">
-                        <div className="flex">
-                            {/* Logo section removed and replaced with portal title */}
+                        <div className="flex items-center space-x-3">
+                            {/* Logo & Brand Title Updated to CampusHub */}
                             <div className="flex shrink-0 items-center">
-                                <Link href={route('dashboard')} className="text-lg font-bold text-gray-800 dark:text-gray-200">
-                                    School Portal
+                                <Link href={route('dashboard')} className="flex items-center space-x-2.5 group">
+                                    <div className="bg-indigo-600 text-white p-2 rounded-xl shadow-md shadow-indigo-200">
+                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                                        </svg>
+                                    </div>
+                                    <span className="text-lg font-bold text-slate-900 dark:text-gray-200 tracking-tight">
+                                        CampusHub
+                                    </span>
                                 </Link>
                             </div>
 
@@ -40,12 +47,12 @@ export default function AuthenticatedLayout({ header, children }) {
                                         <span className="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+                                                className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-sm font-semibold text-slate-700 transition duration-150 ease-in-out hover:bg-slate-50 focus:outline-none dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300 shadow-sm"
                                             >
                                                 {user.name}
 
                                                 <svg
-                                                    className="-me-0.5 ms-2 h-4 w-4"
+                                                    className="-me-0.5 ms-2 h-4 w-4 text-slate-400"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -163,7 +170,7 @@ export default function AuthenticatedLayout({ header, children }) {
             </nav>
 
             {header && (
-                <header className="bg-white shadow dark:bg-gray-800">
+                <header className="bg-white shadow-sm border-b border-slate-200 dark:bg-gray-800">
                     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                         {header}
                     </div>
